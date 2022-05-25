@@ -1,9 +1,7 @@
-/* Этап 1. Подготовка данных */
-console.clear();
+/* Task 1. Вам дана заготовка и результат, который вы должны получить. Ваша задача — написать код, который будет преобразовывать XML в JS-объект и выводить его в консоль. */
 
 // Создание экземпляра класса DOMParser. Он позволит нам парсить XML
 const parser = new DOMParser();
-// console.log('parser', parser);
 
 // XML, который мы будем парсить
 const xmlString = `
@@ -27,16 +25,10 @@ const xmlString = `
 </list>
 `;
 
-/* Этап 2. Получение данных */
-
-// Парсинг XML
+/* Этап 2. Получение данных. Парсинг XML*/
 const xmlDOM = parser.parseFromString(xmlString, "text/xml");
-
-// Получение всех DOM-нод
 const listNode = xmlDOM.querySelector("list");
 const studentNode = listNode.querySelector("student");
-
-
 const listVal = [];
 
 listNode.querySelectorAll('student').forEach((el) => {
